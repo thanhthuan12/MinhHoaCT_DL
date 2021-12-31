@@ -37,7 +37,7 @@ java.util.Scanner ;
 
     public  String  GetName () {
         Hệ thống . ra ngoài . println (tên);
-        trả lại tên;
+        trả lại tên; 
     }
 
 
