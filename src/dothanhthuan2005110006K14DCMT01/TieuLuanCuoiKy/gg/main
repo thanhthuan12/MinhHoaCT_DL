@@ -1,0 +1,194 @@
+package dothanhthuan2005110006K14DCMT01.TieuLuanCuoiKy.gg;
+
+
+    import java.util.Date ;
+    import java.util.Scanner ;
+public class main {
+
+    
+ lớp  công khai  {
+    static  Scanner input =  new  Scanner ( System . in);
+    public  static  Inventory tồn kho =  new  Inventory ();
+    
+    public  static  void  main ( String [] args ) {
+
+        Ngày a =  new  Ngày ();
+        
+        Điện headE =  mới  Electric ( 1 , " Tủ lạnh " , 120000 , a);
+        CrockerySet headCS =  new  CrockerySet ( 2 , " Tấm " , 20000 , a);
+        Food headF =  new  Food ( 3 , " Apple " , 45000 , a);
+
+        Điện electric1 =  mới  điện ( 4 , " truyền hình " , 7.999.999 , a);
+        đầuE . tiếp theo = điện1;
+        CrockerySet crockerySet1 =  mới  CrockerySet ( 5 , " Bowl " , 22000 , a);
+        đầuCS . tiếp theo = crockerySet1;
+        Food food1 =  new  Food ( 6 , " Crab " , 300000 , a);
+        đầuF . tiếp theo = food1;
+
+        
+        Điện electric2 =  mới  Electric ( 7 , " máy tính xách tay " , 12.999.999 , a);
+        điện1 . tiếp theo = điện2;
+        CrockerySet crockerySet2 =  mới  CrockerySet ( 8 , " Chậu " , 11 , a);
+        sành sứ1 . tiếp theo = crockerySet2;
+        Food food2 =  new  Food ( 9 , " Pizza " , 120000 , a);
+        thức ăn1 . tiếp theo = đồ ăn2;
+
+        Điện electric3 =  mới  điện ( 10 , " Tai nghe " , 10 , a);
+        điện2 . tiếp theo = điện3;
+        CrockerySet crockerySet3 =  mới  CrockerySet ( 11 , " ấm trà " , 11 , a);
+        crockerySet2 . tiếp theo = crockerySet3;
+        Thực phẩm food3 =  mới  Thực phẩm ( 12 , " Loster " , 2 , a);
+        thức ăn2 . tiếp theo = thức ăn3;
+
+        Điện electric4 =  mới  điện ( 13 , " Pin " , 10 , a);
+        điện3 . tiếp theo = điện4;
+        CrockerySet crockerySet4 =  mới  CrockerySet ( 14 , " Glass " , 11 , a);
+        sành sứBộ 3 . tiếp theo = crockerySet4;
+        Food food4 =  new  Food ( 15 , " Fish " , 2 , a);
+        thức ăn3 . tiếp theo = đồ ăn4;
+
+        Electric điện5 =  new  Electric ( 16 , " Điện thoại " , 10 , a);
+        điện4 . tiếp theo = điện5;
+        CrockerySet crockerySet5 =  mới  CrockerySet ( 17 , " Gốm " , 11 , a);
+        sành sứBộ 4 . tiếp theo = crockerySet5;
+        Food food5 =  new  Food ( 18 , " Chicken " , 2 , a);
+        thức ăn4 . tiếp theo = thức ăn5;
+
+        Điện electric6 =  mới  điện ( 19 , " Fan " , 3.000.000 , a);
+        điện5 . tiếp theo = điện6;
+        CrockerySet crockerySet6 =  mới  CrockerySet ( 20 , " bảng Sứ " , 220000 , a);
+        sành sứBộ 5 . tiếp theo = crockerySet6;
+        Food food6 =  new  Food ( 21 , " Tomato " , 7000 , a);
+        thức ăn5 . tiếp theo = đồ ăn6;
+
+        hàng tồn kho . headCrockerySet = headCS;
+        hàng tồn kho . headElectric = đầuE;
+        hàng tồn kho . headFood = headF;
+        clearScreen ();
+        khóa int ;
+        làm {
+            Hệ thống . ra ngoài . println ( " --------------- MENU --------------- " );
+            Hệ thống . ra ngoài . println ( " | 1. >> Cập nhật sản phẩm. | " );
+            Hệ thống . ra ngoài . println ( " | 2. >> Tìm kiếm sản phẩm. | " );
+            Hệ thống . ra ngoài . println ( " | 3, >> Sắp xếp sản phẩm | " );
+            Hệ thống . ra ngoài . println ( " | 4. >> Hàng Thống Kê. | " );
+            Hệ thống . ra ngoài . println ( " | 0. >> Thoát khỏi chương trình. | " );
+            Hệ thống . ra ngoài . println ( " ------------------------------------ " );
+            Hệ thống . lỗi lầm . print ( " - Nhập vùng chọn: " );
+            key = đầu vào . nextInt ();
+                Hệ thống . ra ngoài . println ();
+
+            chuyển (phím) {
+                trường hợp  1 :
+                    menuchinhsua ();
+                    phá vỡ ;
+                trường hợp  2 :
+                    menuSreach () ;;
+                    phá vỡ ;
+                trường hợp  3 :
+                trường hợp  4 :
+                    menuThongKe ();
+                    phá vỡ ;
+                
+                trường hợp  0  :
+                    Hệ thống . ra ngoài . println ( " Thoát khỏi chương trình. " );
+                    Hệ thống . ra ngoài . println ( " Cảm ơn bạn đã sử dụng chương trình !! " );
+                    phá vỡ ;
+                mặc định :
+                    Hệ thống . ra ngoài . println ( " bạn đã chọn sai. " );
+                    Hệ thống . ra ngoài . println ( " bạn vui lòng chọn lại. " );
+                phá vỡ ;
+        }
+        } while (phím ! =  0 );
+    }
+    
+    static  void  menuchinhsua () {
+        khóa int ;
+        làm {
+        Hệ thống . ra ngoài . println ();
+        Hệ thống . ra ngoài . println ( " ------ ----- UPDATE ----------- " );
+        Hệ thống . ra ngoài . println ( " | 1. >> Thêm sản phẩm | " );
+        Hệ thống . ra ngoài . println ( " | 2. >> Xoá sản phẩm. | " );
+        Hệ thống . ra ngoài . println ( " | 3. >> Sửa sản phẩm. | " ); 
+        Hệ thống . ra ngoài . println ( " | 4. >> In danh sách sản phẩm. | " );
+        Hệ thống . ra ngoài . println ( " | 0. >> Quay lại menu | " );
+        Hệ thống . ra ngoài . println ( " --------------------------------------- " );
+        Hệ thống . ra ngoài . print ( " - Nhập vùng chọn: " );
+        key = đầu vào . nextInt ();
+
+        chuyển (phím) {
+            trường hợp  1 :
+                Hệ thống . ra ngoài . println ( " 1. >> Thêm sảm phẩm. " );
+                hàng tồn kho . thêm (đầu vào);
+                phá vỡ ;
+            trường hợp  2 :
+                Hệ thống . ra ngoài . println ( " 2. >> Xoá sản phẩm. " );
+                hàng tồn kho . delecte (đầu vào);
+                phá vỡ ;
+            trường hợp  3 : 
+                Hệ thống . ra ngoài . println ( " 3. >> Sửa sảm phẩm. " );
+                hàng tồn kho . delecte (đầu vào);
+                phá vỡ ;
+            trường hợp  4 :
+                Hệ thống . ra ngoài . println ( " 4. >> In danh sách sản phẩm. " );
+                hàng tồn kho . inThongTin ();
+                phá vỡ ;
+            trường hợp  0 : 
+                phá vỡ ;
+            mặc định :
+                Hệ thống . ra ngoài . println ( " Có vẻ như bạn đã chọn sai. " );
+                Hệ thống . ra ngoài . println ( " Vui lòng chọn lại. " );
+                phá vỡ ;
+        }
+        } while (phím ! =  0 );
+
+    }
+    public  static  void  clearScreen () {
+        Hệ thống . ra ngoài . print ( " \ 0 33 [H \ 0 33 [2J " );
+        Hệ thống . ra ngoài . tuôn ra();
+    }
+
+    static  void  menuSreach () {
+        khóa int ;
+        làm {
+            Hệ thống . ra ngoài . println ();
+            Hệ thống . ra ngoài . println ( " ----------- SEARCH MENU ----------- " );
+            Hệ thống . ra ngoài . println ( " | 1. >> Theo loại sản phẩm. | " );
+            Hệ thống . ra ngoài . println ( " | 2. >> Theo giá sản phẩm. | " );
+            Hệ thống . ra ngoài . println ( " | 3. >> Theo ngày nhập | " );
+            Hệ thống . ra ngoài . println ( " | 0. >> Quay về menu | " );
+            Hệ thống . ra ngoài . println ( " --------------------------------------- " );
+            Hệ thống . ra ngoài . print ( " - Nhập vùng bạn muốn chọn: " );
+            key = đầu vào . nextInt ();
+            Hệ thống . ra ngoài . println ();
+
+            chuyển (phím) {
+                trường hợp  1 :
+                    Hệ thống . ra ngoài . println ( " 1. >> Tìm kiếm theo loại sản phẩm. " );
+                    hàng tồn kho . timHangTheoLoai (đầu vào);
+                    phá vỡ ;
+                trường hợp  2 :
+                    Hệ thống . ra ngoài . println ( " 2. >> Tìm kiếm theo giá sản phẩm. " );
+                    hàng tồn kho . timHangTheoGia (đầu vào);
+                    phá vỡ ;
+                trường hợp  3 :
+                    Hệ thống . ra ngoài . println ( " 3. >> Tìm hàng theo ngày nhập. " );
+                    hàng tồn kho . timHangtheoNgay (đầu vào);
+                trường hợp  0 :
+                    phá vỡ ;
+                mặc định :
+                    Hệ thống . ra ngoài . println ( " Có vẻ như bạn đã chọn sai mất rồi. " );
+                    Hệ thống . ra ngoài . println ( " bạn vui lòng chọn lại. " );
+                    phá vỡ ;
+            }
+        } while (phím ! =  0 );
+    }
+
+    static  void  menuThongKe () {
+        hàng tồn kho . thongKe (đầu vào);
+    }
+   
+   
+}
+    
+}

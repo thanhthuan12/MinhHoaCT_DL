@@ -1,0 +1,251 @@
+package dothanhthuan2005110006K14DCMT01.TieuLuanCuoiKy.gg;
+
+java.util.Scanner ;
+java.text.SimpleDateFormat ;
+java.util.Date ;
+java.text.ParseException ;
+
+khoảng không  quảng cáo lớp  công khai {
+
+    CrockerySet headCrockerySet;
+    Thức ăn đầu thực phẩm ;
+    Điện headElectric;
+
+    SimpleDateFormat dateFormat =  new  SimpleDateFormat ( " dd-MMM-yyyy " );
+
+    Khoảng không quảng cáo () {}
+
+    Khoảng không quảng cáo ( Electric  _headElectric , CrockerySet  _headCrockerySet , Food  _headFood ) {
+        headElectric = _headElectric;
+        headCrockerySet = _headCrockerySet;
+        headFood = _headFood;
+    }
+    
+    public  void  add ( Scanner  input ) {
+        Hệ thống . ra ngoài . println ( " Bạn muốn thêm các loại hàng hoá nào? " );
+		Hệ thống . ra ngoài . print ( " 1) Điện lực 2) Đồ sành sứ 3) Thực phẩm " );
+        Hệ thống . ra ngoài . print ( " - Nhập vùng bạn muốn chọn: " );
+		int đã chọn   = đầu vào . nextInt ();
+        if (đã chọn <=  3 ) {
+        
+        if (đã chọn ==  1 ) {
+            Điện currentElectriclectric = headElectric;
+            while (currentElectriclectric ! =  null ) {
+                if (currentElectriclectric . next ==  null ) {
+                    Tồn kho điệnNew =  new  Electric ();
+                    hàng tồn khoMới . id = NhapId (đầu vào, đã chọn);
+                    hàng tồn khoMới . nhapThongTin (đầu vào);
+                    currentElectriclectric . tiếp theo = hàng tồn khoNew;
+                    phá vỡ ;
+                }
+                currentElectriclectric = dòng điệnElectriclectric . tiếp theo;
+            }
+        }
+        
+        if (đã chọn ==  2 ) {
+            CrockerySet currentCrockerySet = headCrockerySet;
+            while (currentCrockerySet ! =  null ) {
+                if (currentCrockerySet . next ==  null ) {
+                    Hàng tồn kho CrockerySetNew =  new  CrockerySet ();
+                    hàng tồn khoMới . id = NhapId (đầu vào, đã chọn);
+                    hàng tồn khoMới . nhapThongTin (đầu vào);
+                    currentCrockerySet . tiếp theo = hàng tồn khoNew;
+                    phá vỡ ;
+                }
+                currentCrockerySet = currentCrockerySet . tiếp theo;
+            }
+        }
+
+        if (đã chọn ==  3 ) {
+            Food currentFood = headFood;
+            while (currentFood ! =  null ) {
+                if (currentFood . next ==  null ) {
+                    Thực phẩm tồn khoNew =  new  Food ();
+                    hàng tồn khoMới . id = NhapId (đầu vào, đã chọn);
+                    hàng tồn khoMới . nhapThongTin (đầu vào);
+                    currentFood . tiếp theo = hàng tồn khoNew;
+                    phá vỡ ;
+                }
+                currentFood = currentFood . tiếp theo;
+            }
+        }
+        } khác 
+             Hệ thống . ra ngoài . println ( " Bạn chọn sai r " );
+
+    }
+
+    public  int  NhapId ( Đầu vào máy quét  , int đã chọn ) { 
+        Hệ thống . ra ngoài . print ( " Hãy nhập ID hàng: " );
+		int id = đầu vào . nextInt ();
+
+        if (đã chọn ==  1 ) {
+            Điện hiện tại = headElectric;
+            while (current ! =  null ) {
+               if (current . id == id) {
+                Hệ thống . ra ngoài . println ( " Id này đã tồn tại " );
+                return NhapId (đầu vào, đã chọn);
+               }
+               current = hiện tại . tiếp theo;
+           }
+        }
+        if (đã chọn ==  2 ) {
+            CrockerySet current = headCrockerySet;
+            while (current ! =  null ) {
+               if (current . id == id) {
+                Hệ thống . ra ngoài . println ( " Id này đã tồn tại " );
+                return NhapId (đầu vào, đã chọn);
+               }
+               current = hiện tại . tiếp theo;
+           }
+        }
+        if (đã chọn ==  3 ) {
+            Food current = headFood;
+            while (current ! =  null ) {
+               if (current . id == id) {
+                Hệ thống . ra ngoài . println ( " Id này đã tồn tại " );
+                return NhapId (đầu vào, đã chọn);
+               }
+               current = hiện tại . tiếp theo;
+           }
+        }
+        trả về id;
+    }
+
+    public  void  inThongTin () {
+        CrockerySet currentCrockerySet = headCrockerySet;
+        Food currentFood = headFood;
+        Điện currentElectriclectric = headElectric;
+
+        while (currentElectriclectric ! =  null ) {
+            currentElectriclectric . inThongTin ();
+            currentElectriclectric = dòng điệnElectriclectric . tiếp theo;
+        }
+
+        Hệ thống . ra ngoài . println ();
+
+        while (currentCrockerySet ! =  null ) {
+            currentCrockerySet . inThongTin ();
+            currentCrockerySet = currentCrockerySet . tiếp theo;
+        }
+
+        Hệ thống . ra ngoài . println ();
+
+        while (currentFood ! =  null ) {
+            currentFood . inThongTin ();
+            currentFood = currentFood . tiếp theo ;
+        }
+
+    }
+
+    public  void  delecte ( Đầu vào máy quét  ) {
+        Hệ thống . ra ngoài . println ( " Muốn xóa theo cách nào " );
+		Hệ thống . ra ngoài . print ( " 1) Theo Id 2) Theo tên 3) Theo giá ----> Lựa chọn: " );
+		
+		int đã chọn = đầu vào . nextInt ();
+
+        if (đã chọn ==  1 ) {
+            Hệ thống . ra ngoài . print ( " Hãy nhập Id hàng hoá cần xoá: " );
+			int idCanXoa = đầu vào . nextInt ();
+
+            if (headElectric . id == idCanXoa) {
+                headElectric = cái đầuElectric . tiếp theo ;
+                trở lại ;
+            }
+
+            if (headCrockerySet . id == idCanXoa) {
+                headCrockerySet = headCrockerySet . tiếp theo ;
+                trở lại ;
+            }
+
+            if (headFood . id == idCanXoa) {
+                headFood = headFood . tiếp theo ;
+                trở lại ;
+            }
+
+            Electric CurentElectric = headElectric;
+            CrockerySet currentCrockerySet = headCrockerySet;
+            Food currentFood = headFood;
+
+            while (CurentElectric . next ! =  null ) {
+                if (CurentElectric . next . id == idCanXoa) {
+                    chữa bệnh bằng điện . tiếp theo = CurentElectric . tiếp theo . tiếp theo;
+                    trở lại ;
+                }
+                CurentElectric = chữa khỏi bệnh điện tử . tiếp theo ;
+            }
+
+            while (currentCrockerySet . next ! =  null ) {
+                if (currentCrockerySet . next . id == idCanXoa) {
+                    currentCrockerySet . next = currentCrockerySet . tiếp theo . tiếp theo;
+                    trở lại ;
+                }
+                currentCrockerySet = currentCrockerySet . tiếp theo ;
+            }
+
+            while (currentFood ! =  null ) {
+                if (currentFood . next . id == idCanXoa) {
+                    currentFood . next = currentFood . tiếp theo . tiếp theo;
+                    trở lại ;
+                }
+                currentFood = currentFood . tiếp theo ;
+            }
+            Hệ thống . ra ngoài . println ( " Không tìm thấy id. " );
+        }
+
+        if (đã chọn ==  2 ) {
+            Hệ thống . ra ngoài . print ( " Please enter the row name to delete: " );
+			đầu vào . hàng tiếp theo();
+			Chuỗi tenCanXoa = đầu vào . hàng tiếp theo();
+
+            if (headElectric . name . equalsIgnoreCase (tenCanXoa)) {
+                headElectric = cái đầuElectric . tiếp theo;
+                trở lại ;
+            }
+
+            if (headCrockerySet . name . equalsIgnoreCase (tenCanXoa)) {
+                headCrockerySet = headCrockerySet . tiếp theo;
+                trở lại ;
+            }
+
+            if (headFood . name . equalsIgnoreCase (tenCanXoa)) {
+                headFood = headFood . tiếp theo;
+                trở lại ;
+            }
+
+            Điện currentElectriclectric = headElectric;
+            CrockerySet currentCrockerySet = headCrockerySet;
+            Food currentFood = headFood;
+
+            while (currentElectriclectric . next ! =  null ) {
+                if (currentElectriclectric . next . name . equalsIgnoreCase (tenCanXoa)) {
+                    currentElectriclectric . next = currentElectriclectric . tiếp theo . tiếp theo ;
+                    trở lại ;
+                }
+                currentElectriclectric = dòng điệnElectriclectric . tiếp theo ;
+            }
+
+            while (currentCrockerySet . next ! =  null ) {
+                if (currentCrockerySet . next . name . equalsIgnoreCase (tenCanXoa)) {
+                    currentCrockerySet . next = currentCrockerySet . tiếp theo . tiếp theo ;
+                    trở lại ;
+                }
+                currentCrockerySet = currentCrockerySet . tiếp theo ;
+            }
+
+            while (currentFood . next ! =  null ) {
+                if (currentFood . next . name . equalsIgnoreCase (tenCanXoa)) {
+                    currentFood . next = currentFood . tiếp theo . tiếp theo ;
+                    trở lại ;
+                }
+                currentFood = currentFood . tiếp theo ;
+            }
+            Hệ thống . ra ngoài . println ( " Không tìm thấy tên. " );
+        }
+           
+        if (đã chọn ==  3 ) {
+            Hệ thống . ra ngoài . print ( " Please enter the row to delete: " );
+			
+
+           
+        }
+    }
